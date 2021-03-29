@@ -247,3 +247,43 @@ int main()
 
 }
 */
+
+
+
+//oop task 3 - deep copy and shallow copy
+
+/*
+#include<iostream>
+using namespace std;
+
+class Box {
+    int height, width, *p;
+public:
+    Box(){
+        p = new int;
+    }
+    void viewData() {
+        cout << height << " / " << width << endl;
+    }
+
+    void getValue(int num1,int num2) {
+        height = num1;
+        width = num2;
+        p = new int;
+        *p = *(b1.p);
+    }
+};
+
+int main() {
+    Box b1, b2;
+    b1.getValue(10, 20);
+    b1.viewData();
+
+    b2 = b1;
+
+    b2.viewData();
+
+
+    return 0;
+}
+*/
