@@ -1,5 +1,6 @@
 
 //milk man code
+
 /*
 #include<iostream>
 #include<fstream>
@@ -57,6 +58,7 @@ int menu() {
 //operator overloading calculator
 
 //1. internet code - runs good
+
 /*
 #include <iostream>
 #include <conio.h>
@@ -150,12 +152,12 @@ void main(){
     n3.showdata();
     cout << "------------------\n";
 }
-
-
 */
 
-//2. abdul wahab code - has errors
+
 /*
+//2. abdul wahab code - has errors
+
 #include <iostream>
 #include <string>
 using namespace std;
@@ -252,16 +254,14 @@ int main()
 
 //oop task 3 - deep copy and shallow copy
 
-/*
+
+//Shallow Copy Code
 #include<iostream>
 using namespace std;
 
 class Box {
-    int height, width, *p;
+    int height, width;
 public:
-    Box(){
-        p = new int;
-    }
     void viewData() {
         cout << height << " / " << width << endl;
     }
@@ -269,8 +269,6 @@ public:
     void getValue(int num1,int num2) {
         height = num1;
         width = num2;
-        p = new int;
-        *p = *(b1.p);
     }
 };
 
@@ -283,7 +281,51 @@ int main() {
 
     b2.viewData();
 
-
+    system("pause");
     return 0;
+}
+
+
+/*
+//Deep Copy Code
+#include<iostream>
+using namespace std;
+
+class demo1 {
+    int data1, data2, * p;
+
+public:
+    demo1() {
+        p = new int;
+    }
+    demo1(demo1& d) {
+        data1 = d.data1;
+        data2 = d.data2;
+        p = new int;
+        *p = *(d.p);
+        *p = 50;
+    }
+
+    void setData(int a, int b, int c) {
+        data1 = a;
+        data2 = b;
+        *p = c;
+    }
+
+    void getData() {
+        cout << "data1: " << data1 << "     data2: " << data2 << "     *p: " << *p << endl;
+    }
+};
+
+int main() {
+
+    demo1 obj1;
+    obj1.setData(10, 20, 30);
+    obj1.getData();
+    demo1 obj2 = obj1;
+    obj2.getData();
+    system("pause");
+    return 0;
+
 }
 */
