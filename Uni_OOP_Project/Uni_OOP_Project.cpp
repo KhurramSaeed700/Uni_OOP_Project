@@ -55,10 +55,10 @@ int menu() {
 }
 */
 
+//===========================================
 //operator overloading calculator
 
 //1. internet code - runs good
-
 /*
 #include <iostream>
 #include <conio.h>
@@ -74,7 +74,7 @@ public:
     }
 
     void getdata(){
-        cout << "enter number: ";
+        cout << "Input: ";
         cin >> num;
         cout << "------------------\n";
     }
@@ -115,49 +115,58 @@ cal cal::operator / (cal arg2) const{
 
 void main(){
     cal n1, n2, n3;
-    int op;
+    int end;
+    char op;
+    end = 0;
+    while (end == 0) {
+        system("cls");
+        cout << "Welcome to Calculator!\n";
+        n1.getdata();
+        cout << "first number: ";
+        n1.showdata();
+        cout << endl;
 
-    n1.getdata();
-    cout << "first number: ";
-    n1.showdata();
-    cout << endl;
+        n2.getdata();
+        cout << "second number: ";
+        n2.showdata();
+        cout << endl;
 
-    n2.getdata();
-    cout << "second number: ";
-    n2.showdata();
-    cout << endl;
+        cout << "enter + - * / \nInput: ";
+        cin >> op;
+        cout << endl;
+        cout << "------------------\n";
 
-    cout << "for + press 1\nfor - press 2\nfor * press 3\nfor / press 4\n";
-    cin >> op;
-    cout << endl;
+        if (op == '+') {
+            n3 = n1 + n2;
+        }
+        else if (op == '-') {
+            n3 = n1 - n2;
+        }
+        else if (op == '*') {
+            n3 = n1 * n2;
+        }
+        else if (op == '/') {
+            n3 = n1 / n2;
+        }
+        else {
+            system("cls");
+            cout << "TRY AGAIN" << endl;
+            system("pause");
+            main();
+        }
 
-    switch (op){
-    case 1:
-        n3 = n1 + n2;
-        break;
-    case 2:
-        n3 = n1 - n2;
-        break;
-    case 3:
-        n3 = n1 * n2;
-        break;
-    case 4:
-        n3 = n1 / n2;
-        break;
-    default:
-        cout << "Invalid choice! " << endl;
+        cout << "Final Result :\n";
+        n3.showdata();
+        cout << "------------------\npress 1 to end\npress 0 to continue\nInput: ";
+        cin >> end;
     }
-
-    cout << "Final Result :\n";
-    n3.showdata();
-    cout << "------------------\n";
+    system("pause");
 }
+
 */
 
-
-/*
 //2. abdul wahab code - has errors
-
+/*
 #include <iostream>
 #include <string>
 using namespace std;
@@ -251,10 +260,10 @@ int main()
 */
 
 
-
+//===========================================
 //oop task 3 - deep copy and shallow copy
 
-
+/*
 //Shallow Copy Code
 #include<iostream>
 using namespace std;
@@ -285,6 +294,7 @@ int main() {
     return 0;
 }
 
+*/
 
 /*
 //Deep Copy Code
@@ -328,4 +338,263 @@ int main() {
     return 0;
 
 }
+*/
+
+//===========================================
+//Hang Man Game
+
+#include<iostream>
+using namespace std;
+
+void printTitle(string message, bool printTop, bool printBottom) {
+    if (printTop) {
+        cout << "+--------------------------------+\n";
+        cout << "|";
+    }
+    bool front = true;
+    for (int i = message.length(); i < 32; i++) {
+        if (front) {
+            message = " " + message;
+        }
+        else
+        {
+            message = message + " ";
+        }
+        front = !front;
+    }
+    cout << message.c_str();
+
+    if (printBottom) {
+        cout << "|" << endl;
+        cout << "+--------------------------------+\n";
+    }
+
+}
+
+//hangman stages
+void man1() {
+    cout << "  " << endl;
+    cout << " " << endl;
+    cout << "                    " << endl;
+    cout << "                    " << endl;
+    cout << "                    " << endl;
+    cout << "                   ____   " << endl;
+    cout << "                  |    |" << endl;
+    cout << "                  |____|   " << endl;
+    cout << "                  " << endl;
+    cout << "                " << endl;
+    cout << "                 " << endl;
+    cout << "                " << endl;
+    cout << "                 " << endl;
+    cout << "                   " << endl;
+    cout << "               " << endl;
+    cout << "              " << endl;
+    cout << "                   " << endl;
+}
+void man2() {
+    cout << "  " << endl;
+    cout << " " << endl;
+    cout << "                    " << endl;
+    cout << "                    " << endl;
+    cout << "                    " << endl;
+    cout << "                   ____   " << endl;
+    cout << "                  |    |" << endl;
+    cout << "                  |____|   " << endl;
+    cout << "                    || " << endl;
+    cout << "                    ||  " << endl;
+    cout << "                    || " << endl;
+    cout << "                    || " << endl;
+    cout << "                   " << endl;
+    cout << "                   " << endl;
+    cout << "               " << endl;
+    cout << "              " << endl;
+    cout << "                   " << endl;
+}
+void man3() {
+    cout << "  " << endl;
+    cout << " " << endl;
+    cout << "                    " << endl;
+    cout << "                    " << endl;
+    cout << "                    " << endl;
+    cout << "                   ____   " << endl;
+    cout << "                  |    |" << endl;
+    cout << "                  |____|   " << endl;
+    cout << "                    || " << endl;
+    cout << "                   /||  " << endl;
+    cout << "                  / || " << endl;
+    cout << "                    || " << endl;
+    cout << "                   " << endl;
+    cout << "                   " << endl;
+    cout << "               " << endl;
+    cout << "              " << endl;
+    cout << "                   " << endl;
+}
+void man4() {
+    cout << "  " << endl;
+    cout << " " << endl;
+    cout << "                    " << endl;
+    cout << "                    " << endl;
+    cout << "                    " << endl;
+    cout << "                   ____   " << endl;
+    cout << "                  |    |" << endl;
+    cout << "                  |____|   " << endl;
+    cout << "                    || " << endl;
+    cout << "                   /||\\  " << endl;
+    cout << "                  / || \\" << endl;
+    cout << "                    || " << endl;
+    cout << "                   " << endl;
+    cout << "                   " << endl;
+    cout << "               " << endl;
+    cout << "              " << endl;
+    cout << "                   " << endl;
+}
+void man5() {
+    cout << "  " << endl;
+    cout << " " << endl;
+    cout << "                    " << endl;
+    cout << "                    " << endl;
+    cout << "                    " << endl;
+    cout << "                   ____   " << endl;
+    cout << "                  |    |" << endl;
+    cout << "                  |____|   " << endl;
+    cout << "                    || " << endl;
+    cout << "                   /||\\  " << endl;
+    cout << "                  / || \\" << endl;
+    cout << "                    || " << endl;
+    cout << "                    /" << endl;
+    cout << "                   /" << endl;
+    cout << "                  /" << endl;
+    cout << "              " << endl;
+    cout << "                   " << endl;
+}
+void man6() {
+    cout << "  " << endl;
+    cout << " " << endl;
+    cout << "                    " << endl;
+    cout << "                    " << endl;
+    cout << "                    " << endl;
+    cout << "                   ____   " << endl;
+    cout << "                  |    |" << endl;
+    cout << "                  |____|   " << endl;
+    cout << "                    || " << endl;
+    cout << "                   /||\\  " << endl;
+    cout << "                  / || \\" << endl;
+    cout << "                    || " << endl;
+    cout << "                    /\\" << endl;
+    cout << "                   /  \\" << endl;
+    cout << "                  /    \\" << endl;
+    cout << "              " << endl;
+    cout << "                   " << endl;
+}
+void man7() {
+    cout << "  " << endl;
+    cout << " " << endl;
+    cout << "                    " << endl;
+    cout << "                    " << endl;
+    cout << "                    " << endl;
+    cout << "                   ____   " << endl;
+    cout << "                  |    |" << endl;
+    cout << "                  |____|   " << endl;
+    cout << "                    || " << endl;
+    cout << "                   /||\\  " << endl;
+    cout << "                  / || \\" << endl;
+    cout << "                    || " << endl;
+    cout << "                    /\\" << endl;
+    cout << "                   /  \\" << endl;
+    cout << "__/ \\___          /    \\" << endl;
+    cout << "|       |              " << endl;
+    cout << "|_______|                   " << endl;
+}
+void man8() {
+    cout << "  " << endl;
+    cout << " " << endl;
+    cout << "   ||               " << endl;
+    cout << "   ||               " << endl;
+    cout << "   ||               " << endl;
+    cout << "   ||              ____   " << endl;
+    cout << "   ||             |    |" << endl;
+    cout << "   ||             |____|   " << endl;
+    cout << "   ||               || " << endl;
+    cout << "   ||              /||\\  " << endl;
+    cout << "   ||             / || \\" << endl;
+    cout << "   ||               || " << endl;
+    cout << "   ||               /\\" << endl;
+    cout << "   ||              /  \\" << endl;
+    cout << "__/ \\___          /    \\" << endl;
+    cout << "|       |              " << endl;
+    cout << "|_______|                   " << endl;
+}
+void man9() {
+    cout << "    _________________" << endl;
+    cout << "   | _______________ |" << endl;
+    cout << "   ||               " << endl;
+    cout << "   ||               " << endl;
+    cout << "   ||               " << endl;
+    cout << "   ||              ____   " << endl;
+    cout << "   ||             |    |" << endl;
+    cout << "   ||             |____|   " << endl;
+    cout << "   ||               || " << endl;
+    cout << "   ||              /||\\  " << endl;
+    cout << "   ||             / || \\" << endl;
+    cout << "   ||               || " << endl;
+    cout << "   ||               /\\" << endl;
+    cout << "   ||              /  \\" << endl;
+    cout << "__/ \\___          /    \\" << endl;
+    cout << "|       |              " << endl;
+    cout << "|_______|                   " << endl;
+}
+void man10() {
+    cout << "    _________________" << endl;
+    cout << "   | _______________ |" << endl;
+    cout << "   ||               ||" << endl;
+    cout << "   ||               ||" << endl;
+    cout << "   ||               ||" << endl;
+    cout << "   ||              _||_   " << endl;
+    cout << "   ||             |    |" << endl;
+    cout << "   ||             |____|   " << endl;
+    cout << "   ||               || " << endl;
+    cout << "   ||              /||\\  " << endl;
+    cout << "   ||             / || \\" << endl;
+    cout << "   ||               || " << endl;
+    cout << "   ||               /\\" << endl;
+    cout << "   ||              /  \\" << endl;
+    cout << "__/ \\___          /    \\" << endl;
+    cout << "|       |              " << endl;
+    cout << "|_______|                   " << endl;
+}
+
+
+
+void drawHangman(int guess=0) {
+
+}
+
+int main() {
+    printTitle("HANG THIS MAN",true,true);
+    man10();
+
+    getchar();
+    return 0;
+}
+
+
+/*
+    cout << "    _________________" << endl;
+    cout << "   | _______________ |" << endl;
+    cout << "   ||               ||" << endl;
+    cout << "   ||               ||" << endl;
+    cout << "   ||               ||" << endl;
+    cout << "   ||              _||_   " << endl;
+    cout << "   ||             |    |" << endl;
+    cout << "   ||             |____|   " << endl;
+    cout << "   ||               || " << endl;
+    cout << "   ||              /||\\   " << endl;
+    cout << "   ||             / || \\   " << endl;
+    cout << "   ||               ||  " << endl;
+    cout << "   ||               /\\   " << endl;
+    cout << "   ||              /  \\   " << endl;
+    cout << "__/ \\___          /    \\" << endl;
+    cout << "|       |              " << endl;
+    cout << "|_______|                   " << endl;
+
 */
