@@ -1,0 +1,25 @@
+#include<iostream>
+using namespace std;
+
+class human {
+public:
+	static int h_c;
+	human() {
+		h_c++;
+		cout << "added: " << h_c << endl;
+	}
+	void total() {
+		cout << "total: " << h_c << endl;
+	}
+
+};
+
+int human::h_c = 0;
+int main() {
+	cout << human::h_c << endl;
+	human a, b, c, d;
+	cout << human::h_c << endl;
+	a.total();
+
+	return 0;
+}

@@ -1,0 +1,204 @@
+//===========================================
+//operator overloading calculator
+
+//1. internet code - runs good
+/*
+#include <iostream>
+#include <conio.h>
+
+using namespace std;
+
+class cal{
+    float num;
+
+public:
+    cal(){
+        num = 0;
+    }
+
+    void getdata(){
+        cout << "Input: ";
+        cin >> num;
+        cout << "------------------\n";
+    }
+
+    void showdata(){
+        cout << num << endl;
+    }
+
+    cal operator + (cal) const;
+    cal operator - (cal) const;
+    cal operator * (cal) const;
+    cal operator / (cal) const;
+};
+
+cal cal::operator + (cal arg2) const{
+    cal temp;
+    temp.num = num + arg2.num;
+    return temp;
+}
+
+cal cal::operator - (cal arg2) const{
+    cal temp;
+    temp.num = num - arg2.num;
+    return temp;
+}
+
+cal cal::operator * (cal arg2) const{
+    cal temp;
+    temp.num = num * arg2.num;
+    return temp;
+}
+
+cal cal::operator / (cal arg2) const{
+    cal temp;
+    temp.num = num / arg2.num;
+    return temp;
+}
+
+void main(){
+    cal n1, n2, n3;
+    int end;
+    char op;
+    end = 0;
+    while (end == 0) {
+        system("cls");
+        cout << "Welcome to Calculator!\n";
+        n1.getdata();
+        cout << "first number: ";
+        n1.showdata();
+        cout << endl;
+
+        n2.getdata();
+        cout << "second number: ";
+        n2.showdata();
+        cout << endl;
+
+        cout << "enter + - * / \nInput: ";
+        cin >> op;
+        cout << endl;
+        cout << "------------------\n";
+
+        if (op == '+') {
+            n3 = n1 + n2;
+        }
+        else if (op == '-') {
+            n3 = n1 - n2;
+        }
+        else if (op == '*') {
+            n3 = n1 * n2;
+        }
+        else if (op == '/') {
+            n3 = n1 / n2;
+        }
+        else {
+            system("cls");
+            cout << "TRY AGAIN" << endl;
+            system("pause");
+            main();
+        }
+
+        cout << "Final Result :\n";
+        n3.showdata();
+        cout << "------------------\npress 1 to end\npress 0 to continue\nInput: ";
+        cin >> end;
+    }
+    system("pause");
+}
+
+*/
+
+//2. abdul wahab code - has errors
+/*
+#include <iostream>
+#include <string>
+using namespace std;
+
+class cal
+{
+private:
+    float a;
+    char op;
+    string opnam;
+
+public:
+    //construtor
+    cal()
+    {
+        a = 0;
+    }
+    //getter
+    void get_data()
+    {
+        cout << "Enter the number :  ";
+        cin >> a;
+        cout << endl;
+    }
+    //setter
+    void set_data()
+    {
+        cout << "Enter operator for arthematic task i.e  +,-,*,/ : ";
+        cin >> op;
+        cout << endl;
+    }
+    //operator ovrerloading
+    cal operator +(cal t)
+    {
+        cal temp;
+        temp.a = a + t.a;
+        return temp;
+    }
+    cal operator -(cal t)
+    {
+        cal temp;
+        temp.a = a - t.a;
+        return temp;
+    }
+    cal operator *(cal t)
+    {
+        cal temp;
+        temp.a = a * t.a;
+        return temp;
+    }
+    cal operator /(cal t)
+    {
+        cal temp;
+        temp.a = a / t.a;
+        return temp;
+    }
+};
+
+int main()
+{
+    cal val_1, val_2, answer, ope;
+    string opname;
+    val_1.get_data();
+    val_2.get_data();
+    ope.set_data();
+    //cal.op = ope;
+    switch (ope)
+    {
+    case '+':
+        answer = val_1 + val_2;
+        opname = "Addition";
+        break;
+    case '-':
+        answer = val_1 - val_2;
+        opname = "Subtration";
+        break;
+    case '*':
+        answer = val_1 * val_2;
+        opname = "Multiplication";
+        break;
+    case '/':
+        opname = "Division";
+        break;
+    default:
+        cout << "Wrong operator \n Thank you";
+    }
+
+    cout << " The " << opname << " of " << val_1 << " and " << val_2 << " is " << answer;
+
+}
+*/
+

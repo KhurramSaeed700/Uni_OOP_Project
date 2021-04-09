@@ -1,0 +1,25 @@
+
+/*
+#include<iostream>
+using namespace std;
+
+class curency {
+    float pkr, usd, c_pkr, c_usd, r_pkr, r_usd;
+
+    curency(int pk, int us) {
+        pkr = pk; usd = us;
+    }
+
+    curency operator * (curency c) {
+        curency temp;
+        temp.
+    }
+
+    void output() {
+
+    }
+};
+
+*/
+
+

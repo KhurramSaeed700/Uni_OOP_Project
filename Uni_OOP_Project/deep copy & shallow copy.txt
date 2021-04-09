@@ -1,0 +1,81 @@
+
+//===========================================
+//oop task 3 - deep copy and shallow copy
+
+/*
+//Shallow Copy Code
+#include<iostream>
+using namespace std;
+
+class Box {
+    int height, width;
+public:
+    void viewData() {
+        cout << height << " / " << width << endl;
+    }
+
+    void getValue(int num1,int num2) {
+        height = num1;
+        width = num2;
+    }
+};
+
+int main() {
+    Box b1, b2;
+    b1.getValue(10, 20);
+    b1.viewData();
+
+    b2 = b1;
+
+    b2.viewData();
+
+    system("pause");
+    return 0;
+}
+
+*/
+
+/*
+//Deep Copy Code
+#include<iostream>
+using namespace std;
+
+class demo1 {
+    int data1, data2, * p;
+
+public:
+    demo1() {
+        p = new int;
+    }
+    demo1(demo1& d) {
+        data1 = d.data1;
+        data2 = d.data2;
+        p = new int;
+        *p = *(d.p);
+        *p = 50;
+    }
+
+    void setData(int a, int b, int c) {
+        data1 = a;
+        data2 = b;
+        *p = c;
+    }
+
+    void getData() {
+        cout << "data1: " << data1 << "     data2: " << data2 << "     *p: " << *p << endl;
+    }
+};
+
+int main() {
+
+    demo1 obj1;
+    obj1.setData(10, 20, 30);
+    obj1.getData();
+    demo1 obj2 = obj1;
+    obj2.getData();
+    system("pause");
+    return 0;
+
+}
+*/
+
